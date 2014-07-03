@@ -774,7 +774,7 @@
     <axis
       xyz="1 0 0" />
   </joint>
-  <link name="p4_instrument_jawbone-left">
+  <link name="p4_instrument_jawbone_left">
     <inertial>
       <origin
         xyz="-0.00211142946935594 0.000167266219560752 -0.000657389690164489"
@@ -811,7 +811,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4_instrument_jaw-left"
+  <joint name="p4_instrument_jaw_left"
     type="continuous">
     <origin
       xyz="0 0 0.00900000000000001"
@@ -819,11 +819,11 @@
     <parent
       link="p4_instrument_head" />
     <child
-      link="p4_instrument_jawbone-left" />
+      link="p4_instrument_jawbone_left" />
     <axis
       xyz="0 0 1" />
   </joint>
-  <link name="p4_instrument_jawbone-right">
+  <link name="p4_instrument_jawbone_right">
     <inertial>
       <origin
         xyz="-0.00211142946935583 0.000167266219581923 -0.000749389690795965"
@@ -860,7 +860,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4_instrument_jaw-right"
+  <joint name="p4_instrument_jaw_right"
     type="continuous">
     <origin
       xyz="0 0 0.00900000000000001"
@@ -868,7 +868,7 @@
     <parent
       link="p4_instrument_head" />
     <child
-      link="p4_instrument_jawbone-right" />
+      link="p4_instrument_jawbone_right" />
     <axis
       xyz="0 0 -1" />
   </joint>
