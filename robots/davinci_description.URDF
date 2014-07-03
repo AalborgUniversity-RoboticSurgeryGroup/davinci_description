@@ -35,7 +35,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="p4-arm-base">
+  <link name="p4_arm_base">
     <inertial>
       <origin
         xyz="0.160243136797189 2.85409670446341E-08 0.456149873456073"
@@ -69,7 +69,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-arm-elevation"
+  <joint name="p4_arm_elevation"
     type="prismatic">
     <origin
       xyz="0 0 0"
@@ -77,7 +77,7 @@
     <parent
       link="base_link" />
     <child
-      link="p4-arm-base" />
+      link="p4_arm_base" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -86,7 +86,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link name="p4-arm1">
+  <link name="p4_arm1">
     <inertial>
       <origin
         xyz="4.61971513685182E-07 0.252962848969993 -0.0998729966694851"
@@ -123,15 +123,15 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-arm-yaw1"
+  <joint name="p4_arm_yaw1"
     type="revolute">
     <origin
       xyz="0.186 0 0.5544"
       rpy="3.1416 0 1.5708" />
     <parent
-      link="p4-arm-base" />
+      link="p4_arm_base" />
     <child
-      link="p4-arm1" />
+      link="p4_arm1" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -140,7 +140,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link name="p4-arm2">
+  <link name="p4_arm2">
     <inertial>
       <origin
         xyz="0.224760417587176 8.48400769093145E-07 -0.0850912705183845"
@@ -177,15 +177,15 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-arm-yaw2"
+  <joint name="p4_arm_yaw2"
     type="revolute">
     <origin
       xyz="0 0.58285 0"
       rpy="-3.14159265358979 1.24808068980918E-16 1.5707963267949" />
     <parent
-      link="p4-arm1" />
+      link="p4_arm1" />
     <child
-      link="p4-arm2" />
+      link="p4_arm2" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -194,7 +194,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link name="p4-arm3">
+  <link name="p4_arm3">
     <inertial>
       <origin
         xyz="-0.0267512630921443 -1.93250659384755E-09 0.145900313046248"
@@ -231,15 +231,15 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-arm-yaw3"
+  <joint name="p4_arm_yaw3"
     type="revolute">
     <origin
       xyz="0.47985 0 -0.001"
       rpy="-4.41862941934989E-22 2.30317389564735E-22 -1.30104260698261E-18" />
     <parent
-      link="p4-arm2" />
+      link="p4_arm2" />
     <child
-      link="p4-arm3" />
+      link="p4_arm3" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -248,7 +248,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link name="p4-arm4">
+  <link name="p4_arm4">
     <inertial>
       <origin
         xyz="0.173920536091799 -3.18908971983827E-08 -0.123558701456668"
@@ -285,15 +285,15 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-arm-roll1"
+  <joint name="p4_arm_roll1"
     type="revolute">
     <origin
       xyz="0.0569999999999999 0 0.19825"
       rpy="-2.72945570336682E-16 2.973835489358E-19 -9.62964972193618E-35" />
     <parent
-      link="p4-arm3" />
+      link="p4_arm3" />
     <child
-      link="p4-arm4" />
+      link="p4_arm4" />
     <axis
       xyz="-1 0 0" />
     <limit
@@ -302,7 +302,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link name="p4-hand1">
+  <link name="p4_hand1">
     <inertial>
       <origin
         xyz="-0.141020957350944 1.21214233081955E-17 0.0663841857186647"
@@ -339,15 +339,15 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-arm-yaw4"
+  <joint name="p4_arm_yaw4"
     type="revolute">
     <origin
       xyz="0.35225 0 -0.117"
       rpy="3.22833053553567E-17 2.04577519985781E-18 8.67361737988404E-19" />
     <parent
-      link="p4-arm4" />
+      link="p4_arm4" />
     <child
-      link="p4-hand1" />
+      link="p4_hand1" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -356,7 +356,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link name="p4-hand2">
+  <link name="p4_hand2">
     <inertial>
       <origin
         xyz="-0.034905365724315 0.0169015146796576 -0.00639701999425513"
@@ -393,15 +393,15 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-hand-roll"
+  <joint name="p4_hand_roll"
     type="revolute">
     <origin
       xyz="-0.0424999999999998 0 0.160999999999999"
       rpy="0 1.22464679914735E-16 0" />
     <parent
-      link="p4-hand1" />
+      link="p4_hand1" />
     <child
-      link="p4-hand2" />
+      link="p4_hand2" />
     <axis
       xyz="1 0 0" />
     <limit
@@ -410,7 +410,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link name="p4-hand3">
+  <link name="p4_hand3">
     <inertial>
       <origin
         xyz="-0.00847368219377387 1.24148413866933E-18 -0.0484521850605982"
@@ -447,15 +447,15 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-hand-pitch"
+  <joint name="p4_hand_pitch"
     type="revolute">
     <origin
       xyz="0 0 0"
       rpy="3.42136669122662E-16 -0.288812097817057 -1.17706479711569E-17" />
     <parent
-      link="p4-hand2" />
+      link="p4_hand2" />
     <child
-      link="p4-hand3" />
+      link="p4_hand3" />
     <axis
       xyz="0 1 0" />
     <limit
@@ -464,7 +464,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link name="p4-hand4">
+  <link name="p4_hand4">
     <inertial>
       <origin
         xyz="0.263815032211533 4.68378885044887E-17 5.85864690094695E-13"
@@ -501,21 +501,21 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-hand-pitch2"
+  <joint name="p4_hand_pitch2"
     type="continuous">
     <origin
       xyz="0.0108229214977171 0 0.186426149539229"
       rpy="3.14159265358979 0.288812097814836 9.64324654702006E-17" />
     <parent
-      link="p4-hand3" />
+      link="p4_hand3" />
     <child
-      link="p4-hand4" />
+      link="p4_hand4" />
     <axis
       xyz="0 1 0" />
     <mimic
-      joint="p4-hand-pitch" />
+      joint="p4_hand_pitch" />
   </joint>
-  <link name="p4-hand4b">
+  <link name="p4_hand4b">
     <inertial>
       <origin
         xyz="0.263815032211533 4.68378885044887E-17 5.85864690094695E-13"
@@ -552,21 +552,21 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-hand-pitch2b"
+  <joint name="p4_hand_pitch2b"
     type="continuous">
     <origin
       xyz="0 0 0.15"
       rpy="3.14159265358979 0.288812097814836 9.64324654702006E-17" />
     <parent
-      link="p4-hand3" />
+      link="p4_hand3" />
     <child
-      link="p4-hand4b" />
+      link="p4_hand4b" />
     <axis
       xyz="0 1 0" />
     <mimic
-      joint="p4-hand-pitch" />
+      joint="p4_hand_pitch" />
   </joint>
-  <link name="p4-hand5">
+  <link name="p4_hand5">
     <inertial>
       <origin
         xyz="0.010300033112455 -5.64698404664002E-08 0.115001494794893"
@@ -603,22 +603,22 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-hand-pitch3"
+  <joint name="p4_hand_pitch3"
     type="continuous">
     <origin
       xyz="0.52 0 0"
       rpy="3.14159265358979 -2.22109682611874E-12 6.08324503520137E-16" />
     <parent
-      link="p4-hand4" />
+      link="p4_hand4" />
     <child
-      link="p4-hand5" />
+      link="p4_hand5" />
     <axis
       xyz="0 -1 0" />
     <mimic
-      joint="p4-hand-pitch"
+      joint="p4_hand_pitch"
       multiplier="-1"/>
   </joint>
-  <link name="p4-instrument-house">
+  <link name="p4_instrument_house">
     <inertial>
       <origin
         xyz="0.0487926923825119 1.2425463059237E-09 0.303878514609369"
@@ -657,15 +657,15 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-instrument-slide"
+  <joint name="p4_instrument_slide"
     type="prismatic">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="p4-hand5" />
+      link="p4_hand5" />
     <child
-      link="p4-instrument-house" />
+      link="p4_instrument_house" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -674,7 +674,7 @@
       effort="1"
       velocity="1" />
   </joint>
-  <link name="p4-instrument-neck">
+  <link name="p4_instrument_neck">
     <inertial>
       <origin
         xyz="1.88981532714125E-09 3.16376702613752E-10 -0.0401302981872702"
@@ -711,19 +711,19 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-instrument-roll"
+  <joint name="p4_instrument_roll"
     type="continuous">
     <origin
       xyz="0.0525000000003168 0 0"
       rpy="3.14159265358979 -1.45892264612837E-16 1.5707963267949" />
     <parent
-      link="p4-instrument-house" />
+      link="p4_instrument_house" />
     <child
-      link="p4-instrument-neck" />
+      link="p4_instrument_neck" />
     <axis
       xyz="0 0 1" />
   </joint>
-  <link name="p4-instrument-head">
+  <link name="p4_instrument_head">
     <inertial>
       <origin
         xyz="2.82477802579071E-06 -3.6037163499536E-05 0.00301833175193345"
@@ -762,19 +762,19 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-instrument-pitch"
+  <joint name="p4_instrument_pitch"
     type="continuous">
     <origin
       xyz="0 0 0.177"
       rpy="0 0 0" />
     <parent
-      link="p4-instrument-neck" />
+      link="p4_instrument_neck" />
     <child
-      link="p4-instrument-head" />
+      link="p4_instrument_head" />
     <axis
       xyz="1 0 0" />
   </joint>
-  <link name="p4-instrument-jawbone-left">
+  <link name="p4_instrument_jawbone-left">
     <inertial>
       <origin
         xyz="-0.00211142946935594 0.000167266219560752 -0.000657389690164489"
@@ -811,19 +811,19 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-instrument-jaw-left"
+  <joint name="p4_instrument_jaw-left"
     type="continuous">
     <origin
       xyz="0 0 0.00900000000000001"
       rpy="1.5707963267949 1.5707963267949 0" />
     <parent
-      link="p4-instrument-head" />
+      link="p4_instrument_head" />
     <child
-      link="p4-instrument-jawbone-left" />
+      link="p4_instrument_jawbone-left" />
     <axis
       xyz="0 0 1" />
   </joint>
-  <link name="p4-instrument-jawbone-right">
+  <link name="p4_instrument_jawbone-right">
     <inertial>
       <origin
         xyz="-0.00211142946935583 0.000167266219581923 -0.000749389690795965"
@@ -860,15 +860,15 @@
       </geometry>
     </collision>
   </link>
-  <joint name="p4-instrument-jaw-right"
+  <joint name="p4_instrument_jaw-right"
     type="continuous">
     <origin
       xyz="0 0 0.00900000000000001"
       rpy="1.5707963267949 1.5707963267949 0" />
     <parent
-      link="p4-instrument-head" />
+      link="p4_instrument_head" />
     <child
-      link="p4-instrument-jawbone-right" />
+      link="p4_instrument_jawbone-right" />
     <axis
       xyz="0 0 -1" />
   </joint>
