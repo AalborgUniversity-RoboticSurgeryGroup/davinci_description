@@ -1,5 +1,100 @@
 <robot
   name="davinci_description">
+	
+	<!-- ros_control plugin -->
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+			<robotNamespace>/davinci</robotNamespace>
+<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+		</plugin>
+	</gazebo>
+
+	<!-- Import all Gazebo-customization elements, including Gazebo colors 
+	<gazebo reference="base_link">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+	<gazebo reference="p4_arm1">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+	<gazebo reference="p4_arm2">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+	<gazebo reference="p4_arm3">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+	<gazebo reference="p4_arm4">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+	<gazebo reference="p4_arm_base">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+	<gazebo reference="p4_hand1">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+	<gazebo reference="p4_hand2">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+	<gazebo reference="p4_hand3">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+	<gazebo reference="p4_hand4">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+	<gazebo reference="p4_hand5">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+	<gazebo reference="p4_instrument_head">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+-->
+	<gazebo reference="p4_instrument_house">
+		<material>Gazebo/Blue</material>
+	</gazebo>
+
+	<gazebo reference="p4_instrument_roll">
+		<sensor type="force_torque" name="p4_instrument_roll_sensor_force_torque">
+		<pose>0 0 0 0 0 0</pose>
+		<visualize>false</visualize>
+		<update_rate>40</update_rate>
+		<plugin name="p4_instrument_roll_sensor_force_torque_controller" filename="libgazebo_ros_force.so">
+		<topicName>/force</topicName>
+		</plugin>
+		</sensor>
+	</gazebo>
+
+<!-- CUT
+	<gazebo reference="p4_instrument_jawbone_left">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+	<gazebo reference="p4_instrument_jawbone_right">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+	<gazebo reference="p4_instrument_neck">
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+	</gazebo>
+-->
+	<!-- Used for fixing robot to Gazebo 'base_link' -->
+	<link name="world"/>
+	<joint name="fixed" type="fixed">
+		<parent link="world"/>
+		<child link="base_link"/>
+	</joint>
+
   <link name="base_link">
     <inertial>
       <origin
@@ -85,6 +180,7 @@
       upper="1"
       effort="1"
       velocity="1" />
+	<dynamics damping="0"/>
   </joint>
   <link name="p4_arm1">
     <inertial>
@@ -139,6 +235,7 @@
       upper="1.5708"
       effort="1"
       velocity="1" />
+	<dynamics damping="0"/>
   </joint>
   <link name="p4_arm2">
     <inertial>
@@ -193,6 +290,7 @@
       upper="2.8"
       effort="1"
       velocity="1" />
+  <dynamics damping="0"/>
   </joint>
   <link name="p4_arm3">
     <inertial>
@@ -247,6 +345,7 @@
       upper="2.8"
       effort="1"
       velocity="1" />
+<dynamics damping="0"/>
   </joint>
   <link name="p4_arm4">
     <inertial>
@@ -301,6 +400,7 @@
       upper="1.5708"
       effort="1"
       velocity="1" />
+<dynamics damping="0"/>
   </joint>
   <link name="p4_hand1">
     <inertial>
@@ -355,6 +455,7 @@
       upper="2.8"
       effort="1"
       velocity="1" />
+<dynamics damping="0"/>
   </joint>
   <link name="p4_hand2">
     <inertial>
@@ -409,6 +510,7 @@
       upper="1.5708"
       effort="1"
       velocity="1" />
+<dynamics damping="0"/>
   </joint>
   <link name="p4_hand3">
     <inertial>
@@ -463,6 +565,7 @@
       upper="1.0"
       effort="1"
       velocity="1" />
+<dynamics damping="0"/>
   </joint>
   <link name="p4_hand4">
     <inertial>
@@ -512,8 +615,7 @@
       link="p4_hand4" />
     <axis
       xyz="0 1 0" />
-    <mimic
-      joint="p4_hand_pitch" />
+<dynamics damping="0"/>
   </joint>
   <link name="p4_hand4b">
     <inertial>
@@ -563,8 +665,7 @@
       link="p4_hand4b" />
     <axis
       xyz="0 1 0" />
-    <mimic
-      joint="p4_hand_pitch" />
+<dynamics damping="0"/>
   </joint>
   <link name="p4_hand5">
     <inertial>
@@ -614,9 +715,7 @@
       link="p4_hand5" />
     <axis
       xyz="0 -1 0" />
-    <mimic
-      joint="p4_hand_pitch"
-      multiplier="-1"/>
+<dynamics damping="0"/>
   </joint>
   <link name="p4_instrument_house">
     <inertial>
@@ -670,9 +769,10 @@
       xyz="0 0 -1" />
     <limit
       lower="0"
-      upper="0.3"
+      upper="1"
       effort="1"
       velocity="1" />
+<dynamics damping="0"/>
   </joint>
   <link name="p4_instrument_neck">
     <inertial>
@@ -722,6 +822,7 @@
       link="p4_instrument_neck" />
     <axis
       xyz="0 0 1" />
+<dynamics damping="0"/>
   </joint>
   <link name="p4_instrument_head">
     <inertial>
@@ -773,6 +874,7 @@
       link="p4_instrument_head" />
     <axis
       xyz="1 0 0" />
+<dynamics damping="0"/>
   </joint>
   <link name="p4_instrument_jawbone_left">
     <inertial>
@@ -822,6 +924,7 @@
       link="p4_instrument_jawbone_left" />
     <axis
       xyz="0 0 1" />
+<dynamics damping="0"/>
   </joint>
   <link name="p4_instrument_jawbone_right">
     <inertial>
@@ -871,5 +974,151 @@
       link="p4_instrument_jawbone_right" />
     <axis
       xyz="0 0 -1" />
+<dynamics damping="0" friction="0.1"/>
   </joint>
+
+<transmission name="tran_p4_arm_elevation">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_arm_elevation"/>
+	<actuator name="motor_p4_arm_elevation">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_arm_yaw1">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_arm_yaw1"/>
+	<actuator name="motor_p4_arm_yaw1">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_arm_yaw2">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_arm_yaw2"/>
+	<actuator name="motor_p4_arm_yaw2">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_arm_yaw3">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_arm_yaw3"/>
+	<actuator name="motor_p4_arm_yaw3">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_arm_yaw4">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_arm_yaw4"/>
+	<actuator name="motor_p4_arm_yaw4">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_arm_roll1">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_arm_roll1"/>
+	<actuator name="motor_p4_arm_roll1">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_hand_roll">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_hand_roll"/>
+	<actuator name="motor_p4_hand_roll">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_hand_pitch">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_hand_pitch"/>
+	<actuator name="motor_p4_hand_pitch">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_hand_pitch2">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_hand_pitch2"/>
+	<actuator name="motor_p4_hand_pitch2">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_hand_pitch2b">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_hand_pitch2b"/>
+	<actuator name="motor_p4_hand_pitch2b">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_hand_pitch3">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_hand_pitch3"/>
+	<actuator name="motor_p4_hand_pitch3">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_instrument_slide">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_instrument_slide"/>
+	<actuator name="motor_p4_instrument_slide">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_instrument_roll">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_instrument_roll"/>
+	<actuator name="motor_p4_instrument_roll">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_instrument_pitch">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_instrument_pitch"/>
+	<actuator name="motor_p4_instrument_pitch">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_instrument_jaw_left">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_instrument_jaw_left"/>
+	<actuator name="motor_p4_instrument_jaw_left">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
+<transmission name="tran_p4_instrument_jaw_right">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="p4_instrument_jaw_right"/>
+	<actuator name="motor_p4_instrument_jaw_right">
+		<hardwareInterface>EffortJointInterface</hardwareInterface>
+		<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+</transmission>
+
 </robot>

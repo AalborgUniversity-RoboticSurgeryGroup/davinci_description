@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<robot>
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/davinci</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <!-- base_link -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- p4_arm_base -->
+  <gazebo reference="p4_arm_base">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- p4_arm1 -->
+  <gazebo reference="p4_arm1">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- p4_arm2 -->
+  <gazebo reference="p4_arm2">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- p4_arm3 -->
+  <gazebo reference="p4_arm3">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- p4_arm4 -->
+  <gazebo reference="p4_arm4">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- p4_hand1 -->
+  <gazebo reference="p4_hand1">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- p4_hand2 -->
+  <gazebo reference="p4_hand2">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- p4_hand3 -->
+  <gazebo reference="p4_hand3">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- p4_hand4 -->
+  <gazebo reference="p4_hand4">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- p4_hand5 -->
+  <gazebo reference="p4_hand5">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- p4_instrument_house -->
+  <gazebo reference="p4_instrument_house">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- p4_instrument_neck -->
+  <gazebo reference="p4_instrument_neck">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- p4_instrument_head -->
+  <gazebo reference="p4_instrument_head">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- p4_instrument_jawbone_left -->
+  <gazebo reference="p4_instrument_jawbone_left">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- p4_instrument_jawbone_right -->
+  <gazebo reference="p4_instrument_jawbone_right">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+</robot>

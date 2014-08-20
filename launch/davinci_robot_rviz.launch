@@ -1,0 +1,28 @@
+<launch>
+  <param name="robot_description"
+    textfile="$(find davinci_description)/robots/davinci_description_fixed.URDF" />
+
+<!-- List of available urdf specifications
+<param name="robot_description"
+    textfile="$(find davinci_description)/robots/davinci_description.URDF" />
+<param name="robot_description"
+    textfile="$(find davinci_description)/robots/davinci_description_all.URDF" />
+<param name="robot_description"
+    textfile="$(find davinci_description)/robots/davinci_description_all_d.URDF" />
+<param name="robot_description"
+    textfile="$(find davinci_description)/robots/davinci_description_fixed.URDF" />
+<param name="robot_description"
+    textfile="$(find davinci_description)/robots/davinci_description_fixed_d.URDF" />
+ -->
+
+
+
+  <!-- Combine joint values -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+<remap from="joint_states" to="/davinci/joint_states" />
+</node>
+
+  <!-- Show in Rviz   -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find davinci_description)/launch/davinci.rviz"/>
+
+</launch>

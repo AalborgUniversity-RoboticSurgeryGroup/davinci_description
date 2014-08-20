@@ -1,9 +1,9 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <package>
   <description>The davinci_description package</description>
 
   <name>davinci_description</name>
-  <version>0.2.0</version>
+  <version>0.2.1</version>
 
   <maintainer email="kdh@es.aau.dk">Karl Damkjær Hansen</maintainer>
 
@@ -11,4 +11,5 @@
 
   <author email="kdh@es.aau.dk">Karl Damkjær Hansen</author>
   <author email="dwu@es.aau.dk">Daniel Winther Uhrenholt</author>
+  <author email="ces@es.aau.dk">Christoffer Eg Sloth</author>
 </package>
