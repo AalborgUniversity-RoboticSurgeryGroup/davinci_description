@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot name="davinci" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Import xacro macros -->
+  <xacro:include filename="$(find davinci_description)/robots/davinci_link_macro.xacro" />
+
+  <!-- Import components -->
+  <!-- Tower -->
+  <xacro:include filename="$(find davinci_description)/robots/tower.xacro" />
+
+  <!-- Arm -->
+  <xacro:include filename="$(find davinci_description)/robots/p4_arm.xacro" />
+
+  <!-- Hand (Offset Remote Center Manipulator) -->
+  <xacro:include filename="$(find davinci_description)/robots/remote_center_manipulator.xacro" />
+
+  <!-- Instrument -->
+  <xacro:include filename="$(find davinci_description)/robots/instruments/needle_driver.xacro" />
+
+</robot>

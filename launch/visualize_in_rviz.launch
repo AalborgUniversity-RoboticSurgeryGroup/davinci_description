@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <param name="robot_description"
+        command="$(find xacro)/xacro.py '$(find davinci_description)/robots/davinci_description.xacro'" />
+
+    <!-- Show in Rviz   -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find davinci_description)/config/davinci.rviz"/>
+
+</launch>

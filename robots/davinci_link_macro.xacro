@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot name="davinci" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- First an include guard-->
+  <xacro:unless value="${macros_included}">
+    <xacro:property name="macros_included" value="true" />
+
+    <xacro:macro name="davinci_link" params="name color *block">
+      <link name="${name}">
+        <visual>
+          <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+          <geometry>
+            <mesh filename="package://davinci_description/meshes/${name}.stl" />
+          </geometry>
+          <material name="${color}"/>
+        </visual>
+        <collision>
+          <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+          <geometry>
+            <mesh filename="package://davinci_description/meshes/decimated/${name}.stl" />
+          </geometry>
+        </collision>
+
+        <xacro:insert_block name="block" />
+
+      </link>
+    </xacro:macro>
+
+  </xacro:unless>
+</robot>
