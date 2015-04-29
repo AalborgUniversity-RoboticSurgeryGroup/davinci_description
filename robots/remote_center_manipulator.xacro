@@ -3,165 +3,55 @@
 
   <xacro:include filename="$(find davinci_description)/robots/davinci_link_macro.xacro" />
 
-  <xacro:davinci_link name="p4_rcm_base"
-    color="slate">
-    <inertial>
-      <origin
-        xyz="-0.141021 0 0.066384"
-        rpy="0 0 0" />
-      <mass
-        value="0.6" />
-      <inertia
-        ixx="1" ixy="0" ixz="0"
-                iyy="1" iyz="0"
-                        izz="1" />
-    </inertial>
-  </xacro:davinci_link>
-
-  <xacro:davinci_link name="p4_rcm_pivot_plate"
-    color="slate">
-    <inertial>
-      <origin
-        xyz="-0.0349 0.0169 -0.0063"
-        rpy="0 0 0" />
-      <mass
-      value="0.2829" />
-      <inertia
-        ixx="1" ixy="0" ixz="0"
-                iyy="1" iyz="0"
-                        izz="1" />
-    </inertial>
-  </xacro:davinci_link>
+  <xacro:davinci_link name="p4_rcm_base" color="slate" />
 
   <joint name="p4_hand_roll"
     type="revolute">
     <origin
-      xyz="-0.0425 0 0.1610"
-      rpy="0 0 0" />
+      xyz="0.482 0 0.047"
+      rpy="0 1.5708 0" />
     <parent
       link="p4_rcm_base" />
     <child
-      link="p4_rcm_pivot_plate" />
+      link="rcm_vitual0" />
     <axis
-      xyz="1 0 0" />
+      xyz="0 0 1" />
     <limit
       lower="-1.5708"
       upper="1.5708"
       effort="1"
       velocity="1" />
-    <dynamics
-      damping="0"/>
   </joint>
 
-  <xacro:davinci_link name="p4_rcm_parallelogram_base"
-    color="slate">
-    <inertial>
-      <origin
-        xyz="-0.0085 0 -0.0484"
-        rpy="0 0 0" />
-      <mass
-        value="1" />
-      <inertia
-        ixx="1" ixy="0" ixz="0"
-                iyy="1" iyz="0"
-                        izz="1" />
-    </inertial>
-  </xacro:davinci_link>
+  <link name="rcm_vitual0" />
 
   <joint name="p4_hand_pitch"
     type="revolute">
     <origin
       xyz="0 0 0"
-      rpy="0 -0.2888 0" />
+      rpy="1.5708 0 0" />
     <parent
-      link="p4_rcm_pivot_plate" />
+      link="rcm_vitual0" />
     <child
-      link="p4_rcm_parallelogram_base" />
+      link="rcm_vitual1" />
     <axis
-      xyz="0 -1 0" />
+      xyz="0 0 1" />
     <limit
       lower="-0.8"
       upper="1.0"
       effort="1"
       velocity="1" />
-    <dynamics damping="0"/>
   </joint>
 
-  <xacro:davinci_link name="p4_rcm_parallelogram_upper_bar"
-    color="slate">
-    <inertial>
-      <origin
-        xyz="0.263815 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0.447188" />
-      <inertia
-        ixx="1" ixy="0" ixz="0"
-                iyy="1" iyz="0"
-                        izz="1" />
-    </inertial>
-  </xacro:davinci_link>
-
-  <joint name="p4_rcm_upper_bar_base_joint"
-    type="continuous">
-    <origin
-      xyz="0.0108 0 0.1864"
-      rpy="3.14159 0.28881 0" />
-    <parent
-      link="p4_rcm_parallelogram_base" />
-    <child
-      link="p4_rcm_parallelogram_upper_bar" />
-    <axis
-      xyz="0 1 0" />
-    <mimic
-      joint="p4_hand_pitch"
-      multiplier="-1.0"
-      offset="0.0" />
-    <dynamics
-      damping="0"/>
-  </joint>
-
-  <xacro:davinci_link name="p4_rcm_instrument_holder"
-    color="slate">
-    <inertial>
-      <origin
-        xyz="0.010300 0 0.115001"
-        rpy="0 0 0" />
-      <mass
-        value="1.367004" />
-      <inertia
-        ixx="1" ixy="0" ixz="0"
-                iyy="1" iyz="0"
-                        izz="1" />
-    </inertial>
-  </xacro:davinci_link>
-
-  <joint name="p4_rcm_instrument_holder_upper_bar_joint"
-    type="continuous">
-    <origin
-      xyz="0.52 0 0"
-      rpy="3.141593 0 0" />
-    <parent
-      link="p4_rcm_parallelogram_upper_bar" />
-    <child
-      link="p4_rcm_instrument_holder" />
-    <axis
-      xyz="0 -1 0" />
-    <mimic
-      joint="p4_hand_pitch"
-      multiplier="1.0"
-      offset="0.0" />
-    <dynamics
-      damping="0"/>
-  </joint>
+  <link name="rcm_vitual1" />
 
   <joint name="p4_instrument_slide"
     type="prismatic">
     <origin
-      xyz="0 0 -0.12"
-      rpy="0 0 0" />
+      xyz="0.097 0 0"
+      rpy="0 -1.5708 0" />
     <parent
-      link="p4_rcm_instrument_holder" />
+      link="rcm_vitual1" />
     <child
       link="needle_driver_house" />
     <axis
@@ -171,7 +61,6 @@
       upper="0.12"
       effort="1"
       velocity="1" />
-    <dynamics damping="0"/>
   </joint>
 
 </robot>

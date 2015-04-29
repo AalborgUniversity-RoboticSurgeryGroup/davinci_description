@@ -13,16 +13,6 @@
       </geometry>
       <material name="surgical gray"/>
     </visual>
-    <inertial>
-      <origin
-        xyz="0.1602 0 0.4561"
-        rpy="0 0 0" />
-      <mass value="2" />
-    <inertia
-      ixx="1" ixy="0" ixz="0"
-              iyy="1" iyz="0"
-                      izz="1" />
-    </inertial>
     <collision>
       <origin
         xyz="0.186 0 0.554"
@@ -40,8 +30,8 @@
     <child
       link="p4_arm1"/>
     <origin
-      xyz="0.186 0 0.5544"
-      rpy="3.1416 0 1.5708" />
+      xyz="0.198 0 0"
+      rpy="0 0 0" />
     <axis
       xyz="0 0 1"/>
     <limit
@@ -49,36 +39,21 @@
       upper="1.5708"
       effort="1"
       velocity="1" />
-    <dynamics
-      damping="0.7"/>
   </joint>
 
-  <xacro:davinci_link name="p4_arm1"
-    color="surgical gray">
-    <inertial>
-    <origin
-      xyz="0 0.2529 -0.0998"
-      rpy="0 0 0" />
-    <mass
-      value="5" />
-    <inertia
-      ixx="1" ixy="0" ixz="0"
-              iyy="1" iyz="0"
-                      izz="1" />
-    </inertial>
-  </xacro:davinci_link>
+  <xacro:davinci_link name="p4_arm1" color="surgical gray"/>
 
   <joint name="p4_arm_yaw2"
     type="revolute">
     <origin
-      xyz="0 0.58285 0"
-      rpy="-3.14159 0 1.5707" />
+      xyz="0.582 0 0"
+      rpy="0 0 0" />
     <parent
       link="p4_arm1" />
     <child
       link="p4_arm2" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 1" />
     <limit
       lower="-2.8"
       upper="2.8"
@@ -88,32 +63,19 @@
       damping="0.7"/>
   </joint>
 
-  <xacro:davinci_link name="p4_arm2"
-    color="surgical gray">
-    <inertial>
-      <origin
-        xyz="0.2247 0 -0.0850"
-        rpy="0 0 0" />
-      <mass
-        value="7" />
-       <inertia
-        ixx="1" ixy="0" ixz="0"
-                iyy="1" iyz="0"
-                        izz="1" />
-    </inertial>
-  </xacro:davinci_link>
+  <xacro:davinci_link name="p4_arm2" color="surgical gray" />
 
   <joint name="p4_arm_yaw3"
     type="revolute">
     <origin
-      xyz="0.47985 0 -0.001"
-      rpy="-4.41862941934989E-22 2.30317389564735E-22 -1.30104260698261E-18" />
+      xyz="0.435 0 0"
+      rpy="0 0 0" />
     <parent
       link="p4_arm2" />
     <child
       link="p4_arm3" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 1" />
     <limit
       lower="-2.8"
       upper="2.8"
@@ -123,61 +85,33 @@
       damping="0"/>
   </joint>
 
-  <xacro:davinci_link name="p4_arm3"
-    color="surgical gray">
-    <inertial>
-      <origin
-        xyz="-0.0267 0 0.1459"
-        rpy="0 0 0" />
-      <mass
-        value="2" />
-      <inertia
-        ixx="1" ixy="0" ixz="0"
-                iyy="1" iyz="0"
-                        izz="1" />
-    </inertial>
-  </xacro:davinci_link>
+  <xacro:davinci_link name="p4_arm3" color="surgical gray" />
 
   <joint name="p4_arm_roll1"
     type="revolute">
     <origin
-      xyz="0.0570 0 0.1982"
-      rpy="0 0 0" />
+      xyz="0 0 0"
+      rpy="0 1.5708 0" />
     <parent
       link="p4_arm3" />
     <child
       link="p4_arm4" />
     <axis
-      xyz="-1 0 0" />
+      xyz="0 0 1" />
     <limit
       lower="-1.5708"
       upper="1.5708"
       effort="1"
       velocity="1" />
-    <dynamics
-      damping="0"/>
   </joint>
 
-  <xacro:davinci_link name="p4_arm4"
-    color="surgical gray">
-    <inertial>
-      <origin
-        xyz="0.1739 0 -0.1235"
-        rpy="0 0 0" />
-      <mass
-        value="2" />
-      <inertia
-        ixx="1" ixy="0" ixz="0"
-                iyy="1" iyz="0"
-                        izz="1" />
-    </inertial>
-  </xacro:davinci_link>
+  <xacro:davinci_link name="p4_arm4" color="surgical gray" />
 
   <joint name="p4_arm_yaw4"
     type="revolute">
     <origin
-      xyz="0.3522 0 -0.117"
-      rpy="0 0 0" />
+      xyz="0 0 0.412"
+      rpy="0 -1.5708 0" />
     <parent
       link="p4_arm4" />
     <child
@@ -189,8 +123,6 @@
       upper="2.8"
       effort="1"
       velocity="1" />
-    <dynamics
-      damping="0"/>
   </joint>
 
 </robot>

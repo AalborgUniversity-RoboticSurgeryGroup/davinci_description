@@ -5,7 +5,7 @@
   <xacro:unless value="${macros_included}">
     <xacro:property name="macros_included" value="true" />
 
-    <xacro:macro name="davinci_link" params="name color *block">
+    <xacro:macro name="davinci_link" params="name color">
       <link name="${name}">
         <visual>
           <origin
@@ -24,9 +24,6 @@
             <mesh filename="package://davinci_description/meshes/decimated/${name}.stl" />
           </geometry>
         </collision>
-
-        <xacro:insert_block name="block" />
-
       </link>
     </xacro:macro>
 
