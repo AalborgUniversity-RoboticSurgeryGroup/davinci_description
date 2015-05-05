@@ -145,8 +145,8 @@
     <axis
       xyz="-1 0 0" />
     <limit
-      lower="-1.5"
-      upper="1.5"
+      lower="-3.14159"
+      upper="3.14159"
       effort="1"
       velocity="1" />
     <dynamics damping="0"/>
@@ -202,8 +202,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-1.8"
-      upper="1.8"
+      lower="-2"
+      upper="2"
       effort="1"
       velocity="1" />
     <dynamics damping="0"/>
